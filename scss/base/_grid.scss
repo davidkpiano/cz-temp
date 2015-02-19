@@ -1,0 +1,66 @@
+@import '_media';
+
+// Horizontal Grid Settings
+$grid-columns: 12 !default;
+$grid-column-gutter: 1rem !default;
+$grid-column-mqs: (all, small, medium, large);
+
+// Vertical Grid Settings
+$grid-rows: 12 !default;
+$grid-row-gutter: 1rem !default;
+$grid-row-mqs: (all, short, tall, small);
+
+// Stacked Grid Settings
+$grid-stack-mqs: (all, small, medium);
+
+
+@function grid-span($span) {
+    @return percentage($span / $grid-columns);
+}
+
+@mixin columns(
+    $span,
+    $media: all
+) {
+    @include mq($media) {
+        $prefix: if($media == all, '', '-#{$media}');
+
+        &#{$prefix} {
+            width: grid-span($span);
+        }
+    }
+}
+
+%column {
+    display: block;
+    float: left;
+}
+
+
+.viewstrap {
+    [class^="col-"], [class*=" col-"], .col {
+        @extend %column;
+    }
+
+    @each $column-mq in $grid-column-mqs {
+        @for $span from 1 through $grid-columns {
+            .col-#{$span} {
+                @include columns($span, $column-mq);
+            }
+        }
+    }
+
+    @each $mq in $grid-stack-mqs {
+        @include mq($mq) {
+            $suffix: -#{$mq};
+            @if $mq == 'all' { $suffix: ''; }
+
+            .stack#{$suffix} {
+                display: block;
+                float: none;
+                width: 100% !important;
+                height: auto;
+            }
+        }
+    }
+}

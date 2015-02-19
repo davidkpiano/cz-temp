@@ -1,0 +1,50 @@
+
+$type-base-font-family: arial, helvetica, Verdana, sans-serif !default;
+$type-base-font-size: 16px !default;
+$type-base-ratio: 1.25 !default;
+$type-base-line-height: 1.4 !default;
+$type-base-vertical-rhythm: $type-base-font-size * $type-base-line-height !default;
+
+@function type-scale(
+    $exponent: 1,
+    $base: $type-base-font-size,
+    $ratio: $type-base-ratio,
+    $factor: 1
+) {
+    @return ($factor * $base) * pow($ratio, $exponent);
+}
+
+@mixin type-scale(
+    $exponent: 1,
+    $base: $type-base-font-size,
+    $ratio: $type-base-ratio,
+    $factor: 1,
+    $rhythm: false
+) {
+    $font-size: type-scale($exponent, $base, $ratio, $factor);
+
+    font-size: $font-size;
+    
+    @if $rhythm {
+        line-height: $rhythm * $type-base-vertical-rhythm / $font-size;
+    }
+}
+
+@mixin heading-scale($args...) {
+    $font-size: type-scale($args...);
+
+    @include type-scale($args...);
+    line-height: 1;
+
+    $margin-top: (ceil($font-size / $type-base-vertical-rhythm) * $type-base-vertical-rhythm) - $font-size + $type-base-vertical-rhythm;
+    $margin-bottom: $type-base-vertical-rhythm;
+
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+
+    &:only-child {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: (ceil($font-size / $type-base-vertical-rhythm) * $type-base-vertical-rhythm) / $font-size;
+    }
+}

@@ -1,0 +1,36 @@
+
+
+<h2>Typeahead</h2>
+
+<div class="sg-example">
+    <div class="vp-typeahead" id="typeahead">
+        <div class="vp-search">    
+            <div class="vp-inputGroup input horizontal">
+                <input type="text"
+                placeholder="Search here..."
+                class="vp-input implicit"
+                onkeypress="document.getElementById('typeahead_dropdown').setAttribute('data-state', 'active')"
+                onblur="document.getElementById('typeahead_dropdown').setAttribute('data-state', 'inactive')">
+                <div class="vp-icon">?</div>
+            </div>
+        </div>
+        <div class="vp-dropdown" data-state="inactive" id="typeahead_dropdown">
+            <div class="vp-menu">
+                <div class="vp-header">Invoice #</div>
+                <ul class="vp-list">
+                    <li class="vp-item"><a href="#">Item 1</a></li>
+                    <li class="vp-item" data-state="active"><a href="#">Item 2</a></li>
+                    <li class="vp-item"><a href="#">Item 3</a></li>
+                </ul>
+            </div>
+            <div class="vp-menu">
+                <div class="vp-header">Company</div>
+                <ul class="vp-list">
+                    <li class="vp-item"><a href="#"><span class="vp-mark underline">Compa</span>ny Item 1</a></li>
+                    <li class="vp-item"><a href="#">Company Item 2</a></li>
+                    <li class="vp-item"><a href="#">Company Item 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

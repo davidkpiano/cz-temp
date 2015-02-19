@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viewstrap - {{ doc.name }}</title>
+    {% for stylesheet in doc.stylesheets %}<link href="{{ stylesheet }}" rel="stylesheet" type="text/css">
+    {% endfor %}
+
+    {% for script in doc.scripts %}<script src="{{ script }}"></script>
+    {% endfor %}
+
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h4><a href="/index.html">Viewstrap</a></h4>
+            <ul>
+                {% for component in doc.docPaths %}
+                    <li>
+                        <a href="/components/{{component.name}}.html" {% if (component.name == doc.name) %} class="selected" {% endif %}>{{component.name}}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </nav>
+        <article class="content">
+            <h2>{{doc.name}}</h2>
+            <div class="component-details">
+                {{doc.content}}
+            </div>
+        </article>
+    </div>
+<script type="text/javascript">
+    (function() {
+        // Hacky stuff to get the output to look properly
+        var trimCode = function() {
+            var code = document.querySelectorAll('pre');
+            if (code.length > 0) {
+                for(var i = 0; i < code.length; i++) {
+                    code[i].innerHTML = code[i].innerHTML.trim();
+                }
+            }
+        };
+        trimCode();
+
+        var runnableExampleContainers = document.querySelectorAll('.runnable-example-container');
+        var componentDetails = document.querySelector('.component-details');
+        var runnableExampleHtml = '';
+        var markdownContent;
+        if (runnableExampleContainers.length > 0) {
+            for (var i = 0; i < runnableExampleContainers.length; i++) {
+                var runnableExampleContent = runnableExampleContainers[i];
+                runnableExampleHtml += runnableExampleContent.innerHTML;
+                componentDetails.removeChild(runnableExampleContent);
+            }
+            markDownContent = marked(componentDetails.textContent.trim());
+            markDownContent += runnableExampleHtml;
+        } else {
+            markDownContent = marked(componentDetails.textContent.trim());
+        }
+        componentDetails.innerHTML = markDownContent;
+    })();
+</script>
+</body>
+</html>
+
+

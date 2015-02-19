@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - {{ doc.id }}</title>
+    {% for stylesheet in doc.stylesheets %}<link href="{{ stylesheet.path }}" rel="stylesheet" type="text/css">
+    {% endfor %}
+    <style>
+        #demo {
+            margin-top: 30px;
+            min-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">{{ doc.fileContents }}</div>
+{% for script in doc.scripts %}<script src="{{ script.path}}"></script>
+{% endfor %}
+</body>
+</html>

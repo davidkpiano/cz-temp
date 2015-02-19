@@ -1,0 +1,82 @@
+@import (reference) "../variables";
+
+.vp-growlBar {
+    width: 100%;
+}
+
+.vp-growlBar-closeButton {
+    font-family: 'Flaticons Stroke';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    content: "\e5b7";
+
+    float: right;
+    margin: 0 -10px 0 0;
+    color: @white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: @graytone03;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.vp-growlBar-body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding-top: 20px;
+}
+
+.vp-growlBar-iconContainer {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.vp-growlBar-icon {
+    display: inline-block;
+    margin-top: -3px;
+
+    &:before {
+        font-family: 'Flaticons Solid';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+.vp-growlBar-content {
+    width: 100%;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.vp-growlBar--info {
+    background-color: @black;
+    border-color: @black;
+    color: @white;
+
+    .vp-growlBar-icon {
+        color: @brandgreen;
+
+        &:before {
+            content: "\e1ce";
+        }
+    }
+}
+
+.vp-growlBar--warn {
+
+}
+
+.vp-growlBar--error {
+
+}
+

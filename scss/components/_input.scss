@@ -1,0 +1,172 @@
+
+$input-theme: 'viewpost' !default;
+$input-padding: 0.5rem !default;
+$input-border-width: 1px !default;
+$input-border-radius: 2px !default;
+$input-type-scale: -1 !default;
+
+$label-theme: 'viewpost' !default;
+$label-type-scale: -1 !default;
+$label-margin-bottom: 0.25rem !default;
+$label-color: $color-gray;
+$label-display: inline-block;
+
+%input {
+    @include type-scale($input-type-scale);
+    padding: $input-padding;
+    border-width: $input-border-width;
+    border-style: solid;
+    border-radius: $input-border-radius;
+    width: 100%;
+    background-image: none;
+
+    &-implicit {
+        background: transparent;
+        border-width: 0;
+
+        &:focus {
+            outline-offset: 0;
+        }
+    }
+
+    &:focus {    
+        outline-style: solid;
+        outline-offset: -$input-border-width;
+        outline-width: $input-border-width;
+    }
+
+    &-disabled {
+        cursor: not-allowed;
+    }
+}
+
+%inputGroup {
+    display: block;
+    width: 100%;
+
+    &-horizontal {
+        display: table;
+
+        > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        %input {
+            width: 100%;
+        }
+    }
+
+    &-input {
+        padding: 0;
+        border-width: $input-border-width;
+        border-style: solid;
+    }
+}
+
+%label {
+    @include type-scale($label-type-scale);
+    margin-bottom: $label-margin-bottom;
+    color: $label-color;
+    display: $label-display;
+}
+
+%select {
+    @extend %input;
+}
+
+//input
+@mixin theme-input-viewpost(
+    $border-color: $color-border,
+    $border-color-hover: shade($color-border, -1),
+    $border-color-focus: $color-primary
+){
+    $type-color: $color-black;
+    $type-color-hover: $type-color;
+    $type-color-focus: $type-color;
+    $background-color: $color-white;
+    $background-color-hover: $background-color;
+    $background-color-focus: $background-color;
+    $background-color-disabled: $color-disabled;
+
+    border-color: $border-color;
+    color: $type-color;
+    background-color: $background-color;
+
+    &:hover {
+        border-color: $border-color-hover;
+        color: $type-color-hover;
+        background-color: $background-color-hover;
+    }
+
+    &:focus {
+        outline-color: $border-color-focus;
+        color: $type-color-focus;
+        background-color: $background-color-focus;
+    }
+
+    &:disabled {
+        background-color: $background-color-disabled;
+    }
+
+    &::placeholder {
+        color: translucent($type-color);
+    }
+}
+
+%theme-input-viewpost{
+    @include theme-input-viewpost();
+
+    &-error { @include theme-input-viewpost($color-failure, $color-failure, $color-failure); }
+}
+
+//label
+@mixin theme-label-viewpost(
+    $type-color: $label-color
+){
+    color: $type-color;
+}
+
+%theme-label-viewpost{
+    @include theme-label-viewpost();
+}
+
+.vp-input {
+    @extend %input;
+    @include theme(input, $input-theme);
+
+    &.implicit {
+        @extend %input-implicit;
+    }
+
+    &:disabled {
+        @extend %input-disabled;
+    }
+
+    @include state('error') {
+        @include theme(input, $input-theme, 'error');
+    }
+}
+
+.vp-inputGroup {
+    @extend %inputGroup;
+
+    &.horizontal {
+        @extend %inputGroup-horizontal;
+    }
+
+    &.input {
+        @extend %inputGroup-input;
+        @include theme('input', $input-theme);
+    }
+}
+
+.vp-label {
+    @extend %label;
+    @include theme(label, $label-theme);
+}
+
+.vp-select {
+    @extend %select;
+    @include theme(input, $input-theme);
+}

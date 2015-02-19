@@ -1,0 +1,26 @@
+{
+  "name": "expose-loader",
+  "version": "0.5.3",
+  "author": {
+    "name": "Tobias Koppers @sokra"
+  },
+  "description": "expose loader module for webpack",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webpack/expose-loader.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "readme": "# expose loader for webpack\r\n\r\n## Usage\r\n\r\n``` javascript\r\nrequire(\"expose?library!./file.js\");\r\n// exposes the exports for file.js to the global context\r\n//  on property \"library\".\r\n```\r\n\r\n[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)\r\n\r\n## License\r\n\r\nMIT (http://www.opensource.org/licenses/mit-license.php)\r\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/webpack/expose-loader/issues"
+  },
+  "_id": "expose-loader@0.5.3",
+  "_from": "expose-loader@~0.5.3"
+}

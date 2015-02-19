@@ -1,0 +1,57 @@
+
+$tag-theme: 'viewpost' !default;
+$tag-padding: 0.25rem 0.5rem !default;
+$tag-type-scale: -2 !default;
+$tag-font-weight: bold !default;
+$tag-text-transform: uppercase !default;
+$tag-text-decoration: none !default;
+$tag-border-radius: $form-border-radius !default;
+
+
+
+%tag {
+    display: inline-block;
+    padding: $tag-padding;
+
+    text-transform: $tag-text-transform;
+    text-decoration: $tag-text-decoration;
+    font-weight: $tag-font-weight;
+
+    border-radius: $tag-border-radius;
+
+    @include type-scale($tag-type-scale);
+}
+
+
+
+@mixin theme-tag-viewpost(
+    $background-color: $color-primary,
+    $type-color: $color-white
+) {
+    background-color: $background-color;
+    color: $type-color;
+}
+
+%theme-tag-viewpost {
+    @include theme-tag-viewpost();
+
+    &-primary { @include theme-tag-viewpost($color-primary); }
+    &-secondary { @include theme-tag-viewpost($color-secondary); }
+
+    &-success { @include theme-tag-viewpost($color-success); }
+    &-warning { @include theme-tag-viewpost($color-warning); }
+    &-failure { @include theme-tag-viewpost($color-failure); }
+}
+
+
+
+.vp-tag {
+    @extend %tag;
+    @include theme('tag', $tag-theme);
+
+    &.primary { @include theme('tag', $tag-theme, 'primary'); }
+    &.secondary { @include theme('tag', $tag-theme, 'secondary'); }
+    &.success { @include theme('tag', $tag-theme, 'success'); }
+    &.warning { @include theme('tag', $tag-theme, 'warning'); }
+    &.failure { @include theme('tag', $tag-theme, 'failure'); }
+}

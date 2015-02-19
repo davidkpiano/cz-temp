@@ -1,0 +1,47 @@
+
+
+// Dropdown Settings
+$dropdown-theme: 'viewpost' !default;
+$dropdown-animation: 'shiftDown' !default;
+$dropdown-border-color: $color-border !default;
+$dropdown-border-width: $form-border-width !default;
+$dropdown-type-scale: -1 !default;
+$dropdown-z-index: z-index(2) !default;
+$dropdown-border-radius: false !default;
+$dropdown-min-width: 15rem !default;
+$dropdown-text-align: left !default;
+$dropdown-clip: true !default;
+$dropdown-offset: 0.25rem !default;
+$dropdown-position: 'below-left' !default;
+$dropdown-margin: 0.5rem 0 0 0 !default;
+
+
+
+%dropdown {
+    @extend %overlay;
+    @include type-scale($dropdown-type-scale);
+    @include transition('shiftDownUp');
+
+    min-width: $dropdown-min-width;
+    z-index: $dropdown-z-index;
+    text-align: $dropdown-text-align;
+    margin: $dropdown-margin;
+    border-width: $dropdown-border-width;
+    border-style: solid;
+    border-radius: $dropdown-border-radius;
+}
+
+
+%theme-dropdown-viewpost {
+    @extend %shadow;
+    border-color: $color-border;
+    background-color: $color-white;
+}
+
+
+
+.vp-dropdown {
+    @extend %dropdown;
+    @extend %dropdown-#{$dropdown-position};
+    @include theme('dropdown', $dropdown-theme);
+}

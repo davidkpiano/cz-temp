@@ -1,0 +1,21 @@
+// Input Types
+//
+// Input component creates all input types, including labels
+//
+// Markup:
+//  <input type="text" class="vp-input"/>
+//    <div id="input-demo"></div>
+//    <script type="text/jsx">
+//        /** @jsx React.DOM **/
+//        React.render(
+//            <div>
+//                <Input placeholder="No Label!"/>
+//                <Input label="With a label" />
+//                <Input type="select" label="A Select Dropdown"><option>Select Option</option></Input>
+//                <Input type="textarea" label="A text area" />
+//                <Input type="radio" label="A Radio Button" />
+//            </div>, document.getElementById('input-demo'));
+//    </script>
+//
+// Styleguide 7
+

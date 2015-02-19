@@ -1,0 +1,169 @@
+
+@import '_form';
+
+$button-theme: 'viewpost' !default;
+$button-margin: 0 $margin-x-half 0 0 !default;
+$button-padding: $pad-y-half $pad-x !default;
+$button-border-width: 0 !default;
+$button-shadow-width: 2px !default;
+$button-scale: $form-input-scale !default;
+$button-text-transform: none !default;
+$button-radius: $form-radius !default;
+$button-decoration: none !default;
+
+// Button Disabled State
+$button-disabled-cursor: not-allowed !default;
+$button-disabled-opacity: 0.5 !default;
+
+// Button Hover State
+$button-hover-decoration: none !default;
+
+// Button Theme Settings
+$button-bgcolor: $color-secondary !default;
+$button-type-color-light: $color-white !default;
+$button-type-color-dark: $color-gray !default;
+
+
+%button {
+    @extend %transition;
+    display: inline-block;
+    margin: $button-margin;
+    cursor: pointer;
+    border-width: $button-border-width;
+    border-style: solid;
+    background-image: none;
+    text-align: center;
+
+    @if $button-radius {
+        border-radius: $button-radius;
+    }
+    
+    > * {
+        @include type-scale($button-scale);
+        @extend %type-strong;
+        display: inline-block;
+        padding: $button-padding;
+        text-align: center;
+        text-transform: $button-text-transform;
+        text-decoration: $button-decoration;
+        white-space: nowrap;
+    }
+
+    &-disabled {
+        cursor: $button-disabled-cursor;
+    }
+
+    &-hover {
+        &, & > * { text-decoration: $button-hover-decoration; }
+    }
+
+    &-left {
+        float: left;
+        margin-left: 0;
+        margin-right: $margin-x-half;
+    }
+
+    &-right {
+        float: right;
+        margin-right: 0;
+        margin-left: $margin-x-half;
+    }
+
+    &-block {
+        display: block;
+        margin: 0;
+        width: 100%;
+    }
+
+    // Stateful buttons
+    
+}
+
+%buttons-horizontal {
+    @include clearfix;
+    
+    > %button {
+        border-radius: 0;
+        margin: 0;
+        margin-bottom: 0;
+        margin-left: -$button-border-width;
+        float: left;
+
+        &:first-of-type { margin-left: inherit; }
+        &:hover, &:focus { z-index: 2; }
+
+        @if $button-radius {
+            &:first-of-type {
+                border-top-left-radius: $button-radius;
+                border-bottom-left-radius: $button-radius;
+            }
+            &:last-of-type {
+                border-top-right-radius: $button-radius;
+                border-bottom-right-radius: $button-radius;
+            }
+        }
+    }
+}
+
+
+@mixin theme-button-viewpost(
+    $bgcolor: $color-primary,
+    $color: $color-white,
+    $border-color: darken($bgcolor, $color-darken-percent),
+    $bgcolor-hover: lighten($bgcolor, $color-lighten-percent),
+    $color-hover: $color,
+    $border-color-hover: darken($bgcolor-hover, $color-darken-percent)
+) {
+    border-color: $border-color;
+    background-color: $bgcolor;
+    
+    &, & > * { color: $color; }
+
+    &:disabled {
+        opacity: $button-disabled-opacity;
+    }
+
+    &:hover, &:active {
+        border-color: $border-color-hover;
+        background-color: $bgcolor-hover;
+
+        &, & > * { color: $color-hover; }
+    }
+
+    box-shadow: 0 $button-shadow-width 0 0 $border-color;
+
+    &:active {
+        box-shadow: 0 0 0 0 $border-color;
+        transform: translateY($button-shadow-width);
+    }
+}
+
+%theme-button-viewpost {
+    @include theme-button-viewpost;
+
+    &-primary { @include theme-button-viewpost($color-primary); }
+
+    &-secondary { @include theme-button-viewpost($color-gray); }
+}
+
+
+
+
+.vp-button {
+    @extend %button;
+    @include theme(button, $button-theme);
+
+    &.primary { @include theme(button, $button-theme, primary); }
+    &.secondary { @include theme(button, $button-theme, secondary); }
+
+    &.left { @extend %button-left; }
+    &.right { @extend %button-right; }
+
+    &.block { @extend %button-block; }
+
+    // Button states
+    &:hover { @extend %button-hover; }
+    &:disabled, &.disabled { @extend %button-disabled; }
+}
+
+.vp-buttons { @extend %buttons-horizontal; }

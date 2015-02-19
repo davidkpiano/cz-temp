@@ -1,0 +1,41 @@
+
+
+$strings: (
+    optional: 'Optional',
+    required: 'Required',
+    example: 'Example',
+    exit: '\2715'
+) !default;
+
+
+
+@mixin string($key, $placement: 'after') {
+    $string: map-get($strings, $key);
+    $placement-map: (
+        'before': ':before',
+        'after': ':after',
+        'left': ':before',
+        'right': ':after'
+    );
+    $rules-map: (
+        'left': (float: left),
+        'right': (float: right)
+    );
+    $placement-selector: map-get($placement-map, $placement);
+    $placement-rules: map-get($rules-map, $placement);
+
+    @if not ($string) and (type-of($key) == 'string') {
+        $string: $key;
+    }
+
+    &#{$placement-selector} {
+        content: "#{$string}";
+
+        @if ($placement-rules) {
+            @each $property, $rule in $placement-rules {
+                #{$property}: #{$rule};
+            }
+        }
+    }
+}
+

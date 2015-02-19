@@ -1,0 +1,173 @@
+
+
+<h2>Date Range Picker</h2>
+
+<div><strong>States</strong> (in <code>[data-state]</code>)<gma:/div>
+<ul>
+    <li><strong>inactive</strong>: form dropdown and calendar hidden</li>
+    <li><strong>active</strong>: form dropdown visible, calendar hidden</li>
+    <li><strong>expanded</strong>: form dropdown visible and calendar visible</li>
+</ul>
+
+<div class="sg-example">
+    <div class="vp-daterangepicker" id="daterangepicker">
+        <div class="vp-field">
+            <input type="text"
+                class="vp-input"
+                placeholder="Date"
+                onFocus="document.getElementById('daterangepicker_dropdown').setAttribute('data-state', 'active')"
+                onKeyPress="document.getElementById('daterangepicker_dropdown').setAttribute('data-state', 'inactive')">
+        </div>
+        <div class="vp-dropdown" data-state="inactive" id="daterangepicker_dropdown">
+            <form class="vp-form">            
+                <div class="vp-field">
+                    <label class="vp-label"><strong>Time Period</strong> <span>(days)</span></label>
+                    <div class="vp-buttons">
+                        <button class="vp-button secondary col-4"><span>30</span></button>
+                        <button class="vp-button secondary col-4"><span>60</span></button>
+                        <button class="vp-button secondary col-4"><span>90</span></button>
+                    </div>
+                </div>
+                <div class="vp-field">
+                    <label class="vp-label">From</label>
+                    <div class="vp-inputGroup horizontal input">
+                        <input class="vp-input implicit"
+                        type="text"
+                        onFocus="document.getElementById('daterangepicker_dropdown').setAttribute('data-state', 'active expanded')"
+                        onblur="document.getElementById('daterangepicker_dropdown').setAttribute('data-state', 'inactive')">
+                        <div class="vp-tile vp-icon">=</div>
+                    </div>
+                </div>
+                <div class="vp-field">
+                    <label class="vp-label">To</label>
+                    <!-- <input class="vp-input" type="text" name="" id=""> -->
+                    <div class="vp-inputGroup horizontal input">
+                        <input type="text" class="vp-input implicit">
+                        <div class="vp-tile vp-icon">=</div>
+                    </div>
+                </div>
+                <div class="vp-field">
+                    <button class="vp-button block"><span>Apply Range</span></button>
+                </div>
+            </form>
+            <div class="vp-content" id="daterangepicker_content">
+                <label class="vp-label">From Date</label>
+                <div class="vp-calendar">
+                    <header class="vp-bar">
+                        <div class="vp-tile">&lsaquo;</div>
+                        <div class="vp-tile full">January 2015</div>
+                        <div class="vp-tile">&rsaquo;</div>
+                    </header>
+                    <section class="vp-section">                    
+                        <div class="vp-month">
+                            <div class="vp-header">
+                                <div class="vp-day">Sun</div>
+                                <div class="vp-day">Mon</div>
+                                <div class="vp-day">Tue</div>
+                                <div class="vp-day">Wed</div>
+                                <div class="vp-day">Thu</div>
+                                <div class="vp-day">Fri</div>
+                                <div class="vp-day">Sat</div>
+                            </div>
+                            <div class="vp-week">
+                                <div class="vp-day">
+                                    <div class="vp-date">1</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">2</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">3</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">4</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">5</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">6</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">7</div>
+                                </div>
+                            </div>
+                            <div class="vp-week">
+                                <div class="vp-day">
+                                    <div class="vp-date">1</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">2</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">3</div>
+                                </div>
+                                <div class="vp-day" data-state="active">
+                                    <div class="vp-date">4</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">5</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">6</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">7</div>
+                                </div>
+                            </div>
+                            <div class="vp-week">
+                                <div class="vp-day">
+                                    <div class="vp-date">1</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">2</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">3</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">4</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">5</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">6</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">7</div>
+                                </div>
+                            </div>
+                            <div class="vp-week">
+                                <div class="vp-day">
+                                    <div class="vp-date">1</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">2</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">3</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">4</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">5</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">6</div>
+                                </div>
+                                <div class="vp-day">
+                                    <div class="vp-date">7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="vp-footer hide">
+                        <a class="vp-today" href="#">Friday, January 16, 2015</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

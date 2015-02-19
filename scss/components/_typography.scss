@@ -1,0 +1,288 @@
+$fonts-dir: '../assets/fonts' !default;
+
+
+$type-custom-font-family: 'ProximaNova-Regular' !default;
+$type-custom-font-family-strong: 'ProximaNova-Bold' !default;
+$type-custom-font-family-light: 'ProximaNova-Light' !default;
+
+$type-font-family: join($type-custom-font-family, $type-base-font-family, comma) !default;
+$type-font-family-strong: join($type-custom-font-family-strong, $type-base-font-family, comma) !default;
+$type-font-family-light: join($type-custom-font-family-light, $type-base-font-family, comma) !default;
+
+$text-spaced-letter-spacing: 2px !default;
+
+$heading-font-family: $type-font-family-light !default;
+$heading-font-weight: normal !default;
+$heading-line-height: 1 !default;
+$heading-type-scales: (5 4 3 2 1 0) !default;
+$heading-letter-spacing: -1px !default;
+
+$anchor-text-decoration: none !default;
+$anchor-theme: 'viewpost' !default;
+
+// Lists
+$definition-margin-bottom: $type-base-vertical-rhythm !default;
+$definition-term-width: 10rem !default;
+
+
+%typography {
+    font-family: $type-font-family;
+    line-height: $type-base-line-height;
+    font-size: $type-base-font-size;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+%rhythm {
+    %list, %paragraph {
+        margin-bottom: $type-base-vertical-rhythm;
+    }
+}
+
+%paragraph {
+    line-height: $type-base-line-height;
+    font-size: $type-base-font-size;
+}
+
+%anchor {
+    text-decoration: $anchor-text-decoration;
+}
+
+%heading {
+    line-height: $heading-line-height;
+    font-weight: $heading-font-weight;
+    font-family: $heading-font-family;
+    letter-spacing: $heading-letter-spacing;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &-inline {
+        display: inline-block;
+    }
+
+    @for $level from 1 through 6 {
+        &-#{$level} {
+            @include heading-scale(nth($heading-type-scales, $level));
+        }
+    }
+}
+
+%hgroup {
+    > * {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1;
+    }
+
+    &:not(:only-child) {
+        margin-bottom: $type-base-vertical-rhythm;
+    }
+}
+
+%text {
+    // ...
+}
+
+%text-small {
+    @include type-scale(-1, $rhythm: 1);
+}
+
+%text-large {
+    @include type-scale(1, $rhythm: 2);
+}
+
+%text-left {
+    text-align: left;
+}
+
+%text-right {
+    text-align: right;
+}
+
+%text-center {
+    text-align: center;
+}
+
+%text-middle {
+    &:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        width: 1em;
+        margin-left: -1em;
+    }
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+%text-midcenter {
+    @extend %text-middle;
+    @extend %text-center;
+}
+
+%text-mark {
+    display: inline-block;
+
+    &-highlight {
+        // ...
+    }
+
+    &-underline {
+        @extend %type-strong;
+        text-decoration: underline;
+    }
+}
+
+%text-spaced {
+    letter-spacing: $text-spaced-letter-spacing;
+}
+
+%text-spaced-caps {
+    @extend %text-spaced;
+    text-transform: uppercase;
+    font-variant: small-caps;
+}
+
+%subtext {
+    opacity: $color-translucent-opacity;
+}
+
+%type-strong {
+    font-weight: normal;
+    font-family: $type-font-family-strong;
+}
+
+%type-normal {
+    font-weight: normal;
+    font-family: $type-font-family;
+}
+
+%type-weak {
+    font-weight: normal;
+    font-family: $type-font-family-light;
+}
+
+// Lists
+%text-list {
+    &-definition {
+        @include clearfix();
+
+        &-term {
+            @extend %type-strong;
+            width: $definition-term-width;
+            float: left;
+            clear: left;
+        }
+
+        &-description {
+            width: calc(100% - #{$definition-term-width});
+            float: left;
+        }
+
+        &-term, &-description {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: $definition-margin-bottom;
+        }
+    }
+}
+
+
+@mixin theme-anchor-viewpost(
+    $color: $color-primary,
+    $color-hover: shade($color, 1),
+    $color-focus: $color-hover,
+    $color-active: $color-hover
+) {
+    @if $color {
+        color: $color;
+    }
+
+    &:hover { color: $color-hover; }
+    &:focus { color: $color-focus; }
+}
+
+%theme-anchor-viewpost {
+    @include theme-anchor-viewpost;
+}
+
+
+
+.vp-typography {
+    @extend %typography;
+    @extend %rhythm;
+}
+
+p {
+    @extend %paragraph;
+}
+
+a {
+    @extend %anchor;
+    @include theme(anchor, $anchor-theme);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend %heading;
+
+    &.inline { @extend %heading-inline; }
+}
+
+h1 { @extend %heading-1; }
+h2 { @extend %heading-2; }
+h3 { @extend %heading-3; }
+h4 { @extend %heading-4; }
+h5 { @extend %heading-5; }
+h6 { @extend %heading-6; }
+
+.hgroup { @extend %hgroup; }
+
+.vp-text { @extend %text; }
+
+// Alignment Classes
+.text-left { @extend %text-left; }
+.text-right { @extend %text-right; }
+.text-center { @extend %text-center; }
+.text-middle { @extend %text-middle; }
+.text-midcenter {
+    @extend %text-middle;
+    @extend %text-center;
+}
+
+// Font Size Classes
+.text-small { @extend %text-small; }
+.text-large { @extend %text-large; }
+
+.vp-mark {
+    @extend %text-mark;
+
+    &.highlight { @extend %text-mark-highlight; }
+    &.underline { @extend %text-mark-underline; }
+}
+
+strong, .type-strong {
+    @extend %type-strong;
+}
+
+.type-normal {
+    @extend %type-normal;
+}
+
+.type-weak {
+    @extend %type-weak;
+}
+
+.subtext {
+    @extend %subtext;
+}
+
+// Lists
+dl { @extend %text-list-definition; }
+dt { @extend %text-list-definition-term; }
+dd { @extend %text-list-definition-description; }

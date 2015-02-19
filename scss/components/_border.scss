@@ -1,0 +1,17 @@
+
+$border-width: 1px !default;
+$border-color: $color-border !default;
+
+
+%border {
+    border-width: $border-width;
+    border-style: solid;
+    border-color: $border-color;
+}
+
+
+.viewstrap {
+    .border {
+        @extend %border;
+    }
+}

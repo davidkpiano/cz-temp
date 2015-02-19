@@ -1,0 +1,49 @@
+
+
+$badge-theme: 'viewpost' !default;
+$badge-padding: 0.25rem 0.5rem !default;
+$badge-border-width: 1px !default;
+$badge-type-scale: -2 !default;
+$badge-font-weight: bold !default;
+$badge-text-transform: uppercase !default;
+$badge-text-decoration: none !default;
+$badge-border-radius: 2 * type-scale($badge-type-scale) !default;
+
+
+%badge {
+    display: inline-block;
+    padding: $badge-padding;
+
+    text-transform: $badge-text-transform;
+    text-decoration: $badge-text-decoration;
+    font-weight: $badge-font-weight;
+
+    border-width: $badge-border-width;
+    border-style: solid;
+    border-radius: $badge-border-radius;
+
+    @include type-scale($badge-type-scale);
+}
+
+@mixin theme-badge-viewpost(
+    $background-color: $color-primary,
+    $text-color: $color-white
+) {
+    background-color: $background-color;
+    color: $text-color;
+}
+
+%theme-badge-viewpost {
+    @include theme-badge-viewpost();
+
+    &-primary { @include theme-badge-viewpost($color-primary); }
+    &-secondary { @include theme-badge-viewpost($color-secondary); }
+}
+
+.vp-badge {
+    @extend %badge;
+    @include theme(badge, $badge-theme);
+
+    &.primary { @include theme(badge, $badge-theme, primary); }
+    &.secondary { @include theme(badge, $badge-theme, secondary); }
+}

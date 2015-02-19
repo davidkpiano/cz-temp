@@ -1,0 +1,24 @@
+{
+    "contents": [
+        "color",
+        "typography",
+        "label",
+        "badge",
+        "tooltip",
+        "alert",
+        "media",
+        "input",
+        "bar",
+        "table",
+        "button",
+        "calendar",
+        "panel",
+        "modal",
+        "daterangepicker",
+        "navigation",
+        "search",
+        "typeahead",
+        "combobox",
+        "pagination"
+    ]
+}

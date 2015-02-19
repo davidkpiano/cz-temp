@@ -1,0 +1,33 @@
+
+
+$media-width: 10rem !default;
+$media-gutter: 1rem !default;
+
+%media {
+    &, + * {
+        float: left;
+    }
+
+    width: $media-width;
+    margin-right: $media-gutter;
+    margin-left: 0;
+
+    + * {
+        width: calc(100% - #{$media-width} - #{$media-gutter});
+    }
+
+    &-right {
+        &, + * {
+            float: right;
+        }
+
+        margin-right: 0;
+        margin-left: $media-gutter;
+    }
+}
+
+.vp-media {
+    @extend %media;
+
+    &.right { @extend %media-right; }
+}

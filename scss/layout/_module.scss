@@ -1,0 +1,11 @@
+
+$template-header-height: 5rem !default;
+$template-main-height: calc(100vh - #{$template-header-height}) !default;
+$template-main-width: calc(50% + #{$container-width} / 2) !default;
+$template-aside-width: calc(50% - #{$container-width} / 2) !default;
+$template-aside-height: $template-main-height !default;
+
+@import '_header';
+@import '_aside';
+@import '_main';
+@import '_footer';

@@ -1,0 +1,34 @@
+
+
+<h2>Modals</h2>
+
+<div class="sg-example">
+    <button class="vp-button" onclick="document.getElementById('modal').setAttribute('data-state', 'active')">
+        <span>Open the Modal!</span>
+    </button>
+    <div class="vp-modal" id="modal" data-state="">
+        <div class="vp-content">
+            <h2>Is this the right company?</h2>
+            <dl>
+                <dt>
+                    <div style="height: 90px; width: 90%; border: 1px solid #ccc;"></div>
+                </dt>
+                <dd>
+                    <div><strong>Black Watch Global</strong></div>
+                    <div>2610 Ramblewood Blvd, Suite 2A</div>
+                    <div>Pittsburgh, PA 34245</div>
+                </dd>
+                <dt>Description</dt>
+                <dd>Black Watch Global is an intelligence and risk management consultancy providing expertise for government, military and commercial clients.</dd>
+                <dt>Email Domain</dt>
+                <dd>
+                    <div>@nomwayglobal.com</div>
+                    <br>
+                    <div class="subtext">Make sure this matches the email for your contact.</div>
+                </dd>
+            </dl>
+            <button class="vp-button primary"><span>Yes, Send Request</span></button>
+            <div class="vp-button secondary" onclick="document.getElementById('modal').setAttribute('data-state', 'inactive')"><span>Cancel</span></div>
+        </div>
+    </div>
+</div>

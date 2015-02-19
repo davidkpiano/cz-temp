@@ -1,0 +1,24 @@
+
+$state-attribute: 'data-state' !default;
+
+
+@function state-selector($states, $target: null) {
+    $result: ();
+
+    @each $state in $states {
+        $result: append($result, '[#{$state-attribute}~="#{$state}"] #{$target}');
+    }
+    @return join((), $result, comma);
+}
+
+@mixin state($state, $target: null) {
+    $state-selector: state-selector($state, $target);
+
+    @if ($state-selector) {
+        &#{$state-selector} {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

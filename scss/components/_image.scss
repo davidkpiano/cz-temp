@@ -1,0 +1,18 @@
+
+@import '_form';
+
+$image-border-width: $form-border-width;
+
+%image {
+    border-width: $image-border-width;
+    border-style: solid;
+}
+
+%theme-image-viewpost {
+    border-color: $color-border;
+}
+
+.vp-image {
+    @extend %image;
+    @include theme('image', 'viewpost');
+}

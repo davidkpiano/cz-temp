@@ -1,0 +1,98 @@
+$colors-brand: (
+    'blue': #66bbee,
+    'gold': #ffbb33,
+    'green': #99cc33,
+    'red': #ff553d,
+    'violet': #a266a2,
+) !default;
+$colors-asset: (
+    'black': #333,
+    'darkGrey': #666,
+    'grey': #999,
+    'medGrey': #ddd,
+    'lightGrey': #ededed,
+    'white': #fafafa,
+) !default;
+
+$color-light: #fafafa !default;
+$color-white: #fff !default;
+$color-black: map-get($colors-asset, 'black') !default;
+$color-gray: map-get($colors-asset, 'medGrey') !default;
+$color-border: map-get($colors-asset, 'medGrey') !default;
+$color-disabled: #e6e6e6 !default;
+
+$color-primary: map-get($colors-brand, 'blue') !default;
+$color-secondary: $color-gray !default;
+
+$color-success: map-get($colors-brand, 'green') !default;
+$color-warning: map-get($colors-brand, 'gold') !default;
+$color-failure: map-get($colors-brand, 'red') !default;
+
+$color-shade-percent: 10% !default;
+$color-lighten-percent: $color-shade-percent !default;
+$color-darken-percent: $color-shade-percent !default;
+$color-lightness-threshold: 75% !default;
+$color-translucent-opacity: 0.4 !default;
+
+$colors: (
+    primary: $color-primary,
+    secondary: $color-gray,
+    success: $color-success,
+    warning: $color-warning,
+    failure: $color-failure,
+    white: $color-white,
+    black: $color-black,
+    light: $color-light,
+) !default;
+
+
+@function is-dark(
+    $color,
+    $threshold: $color-lightness-threshold
+) {
+    @if type-of($color) == color and lightness($color) < $threshold {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+@function shade(
+    $color,
+    $level: 0,
+    $delta: $color-shade-percent
+) {
+    @return scale-color($color, $lightness: $delta * $level);
+}
+
+@function translucent($color) {
+    @return rgba($color, $color-translucent-opacity);
+}
+
+@each $color-name, $color-value in $colors {
+    %color-#{$color-name} {
+        color: $color-value;
+    }
+
+    %background-#{$color-name} {
+        background-color: $color-value;
+
+        &-meta {
+            &:after {
+                content: ' (#{$color-value})';
+            }
+        }
+    }
+}
+
+.viewstrap {
+    @each $color-name, $color-value in $colors {
+        .color-#{$color-name} { @extend %color-#{$color-name}; }
+
+        .background-#{$color-name} {
+            @extend %background-#{$color-name};
+
+            &.meta { @extend %background-#{$color-name}-meta; }
+        }
+    }
+}

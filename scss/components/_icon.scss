@@ -1,0 +1,13 @@
+
+$icon-line-height: 1 !default;
+
+
+
+%icon {
+    line-height: $icon-line-height;
+    text-align: center;
+}
+
+.vp-icon {
+    @extend %icon;
+}

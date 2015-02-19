@@ -1,0 +1,63 @@
+
+$modal-theme: 'viewpost' !default;
+$modal-margin-top: 10vh !default;
+$modal-max-width: 50vw !default;
+$modal-max-height: 100vh - (2 * $modal-margin-top) !default;
+$modal-padding: 1rem 3rem !default;
+$modal-z-index: z-index(10) !default;
+$modal-border-radius: $form-border-radius !default;
+
+
+
+%modal {
+    @extend %animation;
+    @include position-absolute(left, top, $position: fixed);
+    visibility: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: $modal-z-index;
+
+    > %content {
+        @extend %animation;
+        padding: $modal-padding;
+        width: auto;
+        height: auto;
+        max-width: $modal-max-width;
+        max-height: $modal-max-height;
+        margin: $modal-margin-top auto;
+        border-radius: $modal-border-radius;
+    }
+
+    @include transition('fade');
+
+    @include state('active') {
+        visibility: visible;
+
+        > %content { @include animation('shiftDownUp', 'active'); }
+    }
+
+    @include state('inactive') {
+        visibility: hidden;
+        transition: visibility 0 linear 0.3s, opacity 0.3s linear;
+
+        > %content { @include animation('shiftDownUp', 'inactive'); }
+    }
+}
+
+
+
+%theme-modal-viewpost {
+    background-color: translucent($color-black);
+
+    > %content {
+        background-color: $color-white;
+    }
+}
+
+
+
+.vp-modal {
+    @extend %modal;
+    @include theme('modal', $modal-theme);
+}

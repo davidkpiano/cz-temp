@@ -1,0 +1,32 @@
+
+$tile-padding: $pad-half !default;
+
+
+%bar {
+    display: table;
+}
+
+%tile {
+    display: table-cell;
+    vertical-align: middle;
+    padding: $tile-padding;
+
+    &-full {
+        width: 100%;
+    }
+
+    %button {
+        margin: 0;
+    }
+}
+
+
+.vp-bar {
+    @extend %bar;
+}
+
+.vp-tile {
+    @extend %tile;
+
+    &.full { @extend %tile-full; }
+}

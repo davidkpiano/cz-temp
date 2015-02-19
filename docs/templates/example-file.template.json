@@ -1,0 +1,7 @@
+{
+  "name": "{{ doc.example.id }}",
+  "files": [
+    {% for file in doc.files %},
+    "{{ file }}"{% endfor %}
+  ]
+}

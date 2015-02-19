@@ -1,0 +1,161 @@
+
+
+$transition-duration: 0.4s !default;
+$transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1) !default;
+
+@mixin animation($name, $state: 'active') {
+    animation-name: unquote('#{$name}-#{$state}');
+}
+
+@mixin animate($name, $active-state: 'active', $inactive-state: 'inactive', $target: null) {
+    @include state($inactive-state, $target) {
+        @include animation($name, 'inactive');
+    }
+
+    @include state($active-state, $target) {
+        @include animation($name, 'active');
+    }
+}
+
+@mixin activate($name, $active-state: 'active', $inactive-state: 'inactive') {
+    @extend %animation;
+    
+    @each $state in $active-state, $inactive-state {
+        @if ($state) {
+            @include state($state) {
+                animation-name: unquote('#{$name}-#{$state}');
+            }
+        }
+    }
+}
+
+@mixin transition($name, $active-state: 'active', $inactive-state: 'inactive') {
+    @extend %transition;
+
+    @each $state in $active-state, $inactive-state {
+        @if ($state) {
+            @include state($state) {
+                @extend %transition-#{$name}-#{$state};
+
+                @if ($state == $inactive-state) {
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+%transition, %transition-all * {
+    transition-property: all;
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing-function;
+}
+
+%animation {
+    animation-duration: $transition-duration;
+    animation-timing-function: $transition-timing-function;
+    animation-fill-mode: both;
+}
+
+@keyframes fade-active {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-inactive {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+%transition-fade-active {
+    opacity: 1;
+}
+
+%transition-fade-inactive {
+    opacity: 0;
+}
+
+
+@keyframes slideLeftRight-active {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeftRight-inactive {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes shiftDown-active {
+    from {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shiftDown-inactive {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+%transition-shiftDownUp-active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+%transition-shiftDownUp-inactive {
+    transform: translateY(-1rem);
+    opacity: 0;
+}
+
+@keyframes shiftDownUp-active {
+    from {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shiftDownUp-inactive {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+}

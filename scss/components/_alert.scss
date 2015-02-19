@@ -1,0 +1,43 @@
+@import '_form';
+
+$alert-padding: 1rem !default;
+$alert-margin: 0 0 1rem 0 !default;
+$alert-border-radius: $form-border-radius !default;
+
+%alert {
+    @extend %shadow;
+    display: block;
+    width: 100%;
+    padding: $alert-padding;
+    margin: $alert-margin;
+    border-radius: $alert-border-radius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin theme-alert-viewpost(
+    $background-color: $color-primary,
+    $color: if(is-dark($background-color), $color-white, $color-black)
+) {
+    background: $background-color;
+    color: $color;
+}
+
+%theme-alert-viewpost {
+    @include theme-alert-viewpost();
+
+    &-light {
+        @include theme-alert-viewpost($color-light);
+    }
+}
+
+.vp-alert {
+    @extend %alert;
+    @include theme('alert', 'viewpost');
+
+    &.light {
+        @include theme('alert', 'viewpost', 'light');
+    }
+}

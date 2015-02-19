@@ -1,0 +1,47 @@
+
+$menu-theme: 'viewpost' !default;
+$menu-header-padding: $item-padding !default;
+
+
+
+%menu {
+    %header {
+        padding: $menu-header-padding;
+    }
+
+    %item {
+        padding: 0;
+    }
+}
+
+
+
+%theme-menu-viewpost {
+    %header {
+        @extend %type-strong;
+        background-color: $color-light;
+    }
+
+    %item {
+        &-hover {
+            background-color: shade($color-primary, -1);
+        }
+
+        &-active {
+            background-color: $color-primary;
+        }
+        
+        @include theme-item-viewpost(
+                $link-color: $color-black,
+                $link-color-active: $color-white,
+                $link-color-hover: $color-white
+            );
+    }
+}
+
+
+
+.vp-menu {
+    @extend %menu;
+    @include theme('menu', $menu-theme);
+}

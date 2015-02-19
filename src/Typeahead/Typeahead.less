@@ -1,0 +1,104 @@
+@import (reference) "../variables";
+
+.vp-typeahead {
+    position: relative;
+    display: inline-block;
+    .gibson-font-size('light');
+    input {
+        .gibson-font-size('light');
+        min-width: 180px;
+        border: 1px solid @graytone04;
+        min-height: 30px;
+        padding: 8px 12px;
+        border-radius: 2px;
+        &:focus {
+            outline: none;
+            border-color: @graytone06;
+        }
+        &::-ms-clear {
+            display: none;
+        }
+    }
+}
+
+.vp-typeahead-searchIcon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -8px;
+    color: @graytone05;
+
+    &:before {
+        font-family: 'Flaticons Stroke';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        content: '';
+    }
+}
+.vp-typeahead-clearIcon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -8px;
+    color: @graytone05;
+    cursor: pointer;
+
+    &:before {
+        font-family: 'Flaticons Stroke';
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        content: '';
+    }
+}
+.vp-typeahead-results {
+    display: none;
+    position: absolute;
+    margin-top: 6px;
+    border: 1px solid @graytone04;
+    color: @graytone05;
+    top: 100%;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 180px;
+    font-size: 12px;
+    color: @black;
+    text-align: left;
+    background-color: @white;
+    border-radius: 2px;
+    background-clip: padding-box;
+}
+
+.vp-typeahead-results--open {
+    &.vp-typeahead-results {
+        display: block;
+    }
+}
+
+.vp-typeahead-selected {
+    background: @highlight-blue;
+    &.vp-typeahead-item {
+        color: @white;
+    }
+}
+
+.vp-typeahead-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.vp-typeahead-link {
+    display: block;
+    text-decoration: none;
+    color: @black;
+    &:hover {
+        text-decoration: none;
+        color: @black;
+    }
+}

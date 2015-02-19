@@ -1,0 +1,60 @@
+$daterangepicker-theme: 'viewpost' !default;
+$daterangepicker-height: 300px !default;
+
+// Active
+$daterangepicker-active-width: 15rem !default;
+
+// Expanded
+$daterangepicker-expanded-width: $daterangepicker-active-width * 5/2 !default;
+
+
+
+%daterangepicker {
+    @include clearfix;
+
+    %dropdown {
+        height: $daterangepicker-height;
+        width: $daterangepicker-active-width;
+
+        @include state('expanded') {
+            width: $daterangepicker-expanded-width;
+        }
+    }
+
+    %form, %content {
+        padding: $pad;
+        height: 100%;
+        position: absolute;
+    }
+
+    > %field {
+        margin-bottom: 0;
+    }
+
+    %form {
+        width: $daterangepicker-active-width;
+        left: 0;
+        z-index: z-index(2);
+    }
+
+    %content {
+        width: $daterangepicker-expanded-width - $daterangepicker-active-width;
+        right: 0;
+        z-index: z-index(1);
+    }
+}
+
+
+
+%theme-daterangepicker-viewpost {
+    %form {
+        background-color: $color-white;
+        border-right: $form-border-width solid $color-border;
+    }
+}
+
+
+.vp-daterangepicker {
+    @extend %daterangepicker;
+    @include theme('daterangepicker', $daterangepicker-theme);
+}

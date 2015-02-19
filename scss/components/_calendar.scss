@@ -1,0 +1,152 @@
+
+$calendar-title-type-scale: -1 !default;
+
+$month-padding: $pad-half !default;
+
+$week-padding: 0 !default;
+
+$day-padding: $pad-y-half 0 !default;
+$day-cursor: pointer !default;
+
+$date-type-scale: -1 !default;
+$date-padding: 0.25rem 0.5rem !default;
+$date-border-radius: 3rem !default;
+
+
+%calendar {
+    @include clearfix;
+    display: block;
+
+    %day {
+        text-align: center;
+    }
+
+    %tile {
+        @extend %text-spaced-caps;
+        text-align: center;
+    }
+
+    %title {
+        @include type-scale($calendar-title-type-scale);
+        @extend %text-spaced-caps;
+    }
+
+    %header {
+        text-align: center;
+    }
+
+    %footer {
+        padding: $pad;
+        text-align: center;
+    }
+}
+
+%month {
+    @include clearfix();
+    padding: $month-padding;
+
+    %day {
+        display: block;
+        float: left;
+        width: percentage(1/7);
+    }
+
+    > %header {
+        @include type-scale($date-type-scale);
+        padding: $week-padding;
+    }
+}
+
+%week {
+    @include clearfix;
+    padding: $week-padding;
+}
+
+%day {
+    padding: $day-padding;
+    cursor: $day-cursor;
+}
+
+%date {
+    @include type-scale($date-type-scale);
+    display: inline-block;
+    padding: $date-padding;
+    line-height: 1;
+    border-radius: $date-border-radius;
+
+    &-hover {
+        // ...
+    }
+
+    &-active {
+        @extend %type-strong;
+    }
+
+    &-past, &-future {
+        @extend %subtext;
+    }
+}
+
+%today {
+    display: inline-block;
+}
+
+
+%theme-calendar-viewpost {
+    border-width: $form-border-width;
+    border-style: solid;
+    border-color: $color-border;
+
+    %bar {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+
+    %day {
+        &-hover %date {
+            background-color: translucent($color-primary);
+        }
+
+        &-active %date {
+            @extend %type-strong;
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+}
+
+
+
+
+.vp-calendar {
+    @extend %calendar;
+    @include theme('calendar', 'viewpost');
+}
+
+.vp-month {
+    @extend %month;
+}
+
+.vp-week {
+    @extend %week;
+}
+
+.vp-day {
+    @extend %day;
+
+    &:hover { @extend %day-hover; }
+    &[data-state="active"] { @extend %day-active; }
+}
+
+.vp-date {
+    @extend %date;
+    @include theme('date', 'viewpost');
+
+    &.date-past { @extend %date-past; }
+
+    &.date-future { @extend %date-future; }
+}
+
+.vp-today {
+    @extend %today;
+}

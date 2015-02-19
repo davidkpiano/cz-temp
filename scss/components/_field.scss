@@ -1,0 +1,29 @@
+
+$field-margin-bottom: 1rem !default;
+
+$field-text-type-scale: -1 !default;
+$field-text-margin: 0.5rem 0 0 0 !default;
+
+
+
+%field {
+    @include clearfix;
+
+    overflow: visible;
+    margin-bottom: $field-margin-bottom;
+
+    &:last-child, &:only-child {
+        margin-bottom: 0;
+    }
+
+    > %text {
+        @include type-scale($field-text-type-scale);
+        margin: $field-text-margin;
+    }
+}
+
+
+
+.vp-field {
+    @extend %field;
+}

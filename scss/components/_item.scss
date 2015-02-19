@@ -1,0 +1,75 @@
+
+$item-theme: 'viewpost' !default;
+$item-padding: $pad-y-half $pad-x !default;
+$item-type-scale: -1 !default;
+$item-link-text-decoration: none !default;
+
+
+
+
+%item {
+    display: block;
+    @include type-scale($item-type-scale);
+
+    > * {
+        padding: $item-padding;
+        @include type-scale($item-type-scale);
+    }
+
+    %anchor {
+        text-decoration: $item-link-text-decoration;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+
+
+@mixin theme-item-viewpost(
+    $link-color: $color-gray,
+    $link-color-active: $color-black,
+    $link-color-hover: $color-primary,
+    $link-color-disabled: rgba($link-color, 0.5)
+
+) {
+    &%item {
+        %anchor { color: $link-color; }
+    }
+
+    &%item-active {
+        %anchor { color: $link-color-active; }
+    }
+
+    &%item-hover {
+        %anchor { color: $link-color-hover; }
+    }
+
+    &%item-disabled {
+        %anchor { color: $link-color-disabled; }
+    }
+}
+
+%theme-item-viewpost {
+    @include theme-item-viewpost;
+
+    &-light {
+        @include theme-item-viewpost(
+                $link-color: $color-light,
+                $link-color-hover: $color-white
+            );
+    }
+}
+
+
+.vp-item {
+    @extend %item;
+    @include theme(item, $item-theme);
+
+    &:hover {
+        @extend %item-hover;
+    }
+
+    &[data-state="active"] {
+        @extend %item-active;
+    }
+}

@@ -1,0 +1,27 @@
+
+$nav-type-scale: 0 !default;
+
+
+
+%nav {
+    @include clearfix;
+    display: block;
+
+    %item {
+        @include type-scale($nav-type-scale);
+    }
+
+    &-horizontal {
+        %item {
+            float: left;
+            height: 100%;
+        }
+    }
+}
+
+
+.vp-nav {
+    @extend %nav;
+
+    &.horizontal { @extend %nav-horizontal; }
+}

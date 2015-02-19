@@ -1,0 +1,21 @@
+
+
+%template-main {
+    float: left;
+    height: $template-main-height;
+    width: $template-main-width;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    > %section {
+        width: $container-width;
+    }
+
+    > %drawer {
+        width: calc(100% - #{$container-width});
+    }
+}
+
+.vp-template-main {
+    @extend %template-main;
+}

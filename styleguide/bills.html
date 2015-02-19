@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Viewstrap Styleguide</title>
+
+    <link rel="stylesheet" href="css/viewstrap.css">
+
+    <script src="assets/js/react/build/react.js"></script>
+    <script src="assets/js/react/build/JSXTransformer.js"></script>
+</head>
+<body class="viewstrap vp-typography">
+    <header class="vp-template-header container-pad">
+
+    </header>
+    <aside class="vp-template-aside" data-state="active">
+        
+    </aside>
+    <main class="vp-template-main">
+        <aside id="drawer" class="vp-drawer right pad-double" data-state="active">
+            <div class="hgroup">
+                <h3>Payment Summary</h3>
+                <div class="subtext">1 invoice from 1 vendor</div>
+            </div>
+            <div class="vp-field">
+                <label for="" class="vp-label">Bank Account</label>
+                <input type="text" class="vp-input" value="U.S. Bank Corp ...xx1234">
+            </div>
+            <div class="vp-field">
+                <label for="" class="vp-label">Payment Date</label>
+                <input type="text" class="vp-input" placeholder="Choose Payment Date">
+            </div>
+            <div class="vp-field">
+                <div class="hgroup">
+                    <small class="subtext">Payment Total</small>
+                    <h3>$10,000</h3>
+                </div>
+            </div>
+            <div class="vp-field">
+                <div class="vp-button block"><span>Continue Payment</span></div>
+            </div>
+            <div class="vp-field">
+                <div class="vp-button block secondary"><span>Edit Payments</span></div>
+            </div>
+        </aside>
+        <section class="vp-section pad-double" onclick="document.getElementById('drawer').setAttribute('data-state', 'active');">
+            <h2>Bills</h2>
+            <div class="pad-y subtext">Paying 9 invoices from 3 vendors</div>
+            <div class="vp-panel">
+                <div class="vp-header">
+                    <div class="vp-bar">
+                        <div class="vp-tile full">
+                            <h3>New Energy Resources</h3>
+                        </div>
+                        <div class="vp-tile text-right">
+                            <div class="hgroup">
+                                <h4><strong>$90,000.00</strong></h4>
+                                <small><a href="#" class="small">Paying 1 Invoices</a></small>
+                            </div>
+                        </div>
+                        <div class="vp-tile">
+                            <div class="vp-icon">v</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vp-content">
+                    <table class="vp-table">
+                        <thead>
+                            <tr>
+                                <th>Invoice</th>
+                                <th>Due Date</th>
+                                <th>Balance</th>
+                                <th>Payment Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">ECA001234</a></td>
+                                <td>02/14/15</td>
+                                <td>$10,000.00</td>
+                                <td><strong>$10,000.00</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-4">
+                        <div>Paper Check</div>
+                        <div class="text-small">Scheduled for 02/03/15</div>
+                        <div class="text-small">Arrives by 02/14/15</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="subtext">Mailing Address</div>
+                        <div>319 Ash Coal-de-sac</div>
+                        <div>Chicago, Illinois 12307 <a href="#">Edit</a></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="subtext">Memo:</div>
+                        <div>Next three months of Coal Distribution <a href="#">Edit</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="vp-template-footer">
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,515 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2d0cd6");
+
+$fonts-dir: '../../assets/fonts' !default;
+
+/* fonts.less */
+/* @license
+ * MyFonts Webfont Build ID 2337182, 2012-08-01T09:47:07-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Gibson Light by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/light/
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Gibson Light Italic by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/light-italic/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Gibson Bold Italic by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/bold-italic/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Gibson Semi Bold Italic by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/semi-bold-italic/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Gibson Bold by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/bold/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Gibson by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/regular/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Gibson Semi Bold by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/semi-bold/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Gibson Italic by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/italic/
+ * Licensed pageviews: unspecified
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2337182
+ * Webfonts copyright: Copyright &#x00A9; 2011 Rod McDonald. Published by Canada Type. All rights reserved.
+ * 
+ * ┬⌐ 2012 Bitstream Inc
+*/
+@font-face {
+  font-family: "Gibson-Bold";
+  src: url('#{$fonts-dir}/gibson/Bold-webfont.eot');
+  src: url('#{$fonts-dir}/gibson/Bold-webfont.eot?#iefix') format('eot'), url('#{$fonts-dir}/gibson/Bold-webfont.svg') format('svg'), url('#{$fonts-dir}/gibson/Bold-webfont.woff') format('woff'), url('#{$fonts-dir}/gibson/Bold-webfont.otf') format('truetype');
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Gibson-Bold";
+    src: url('#{$fonts-dir}/gibson/Bold-webfont.svg') format('svg');
+  }
+}
+@font-face {
+  font-family: "Gibson-SemiBold";
+  src: url('#{$fonts-dir}/gibson/SemiBold-webfont.eot');
+  src: url('#{$fonts-dir}/gibson/SemiBold-webfont.eot?#iefix') format('eot'), url('#{$fonts-dir}/gibson/SemiBold-webfont.svg') format('svg'), url('#{$fonts-dir}/gibson/SemiBold-webfont.woff') format('woff'), url('#{$fonts-dir}/gibson/SemiBold-webfont.otf') format('truetype');
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Gibson-SemiBold";
+    src: url('#{$fonts-dir}/gibson/SemiBold-webfont.svg') format('svg');
+  }
+}
+@font-face {
+  font-family: "Gibson-Regular";
+  src: url('#{$fonts-dir}/gibson/Regular-webfont.eot');
+  src: url('#{$fonts-dir}/gibson/Regular-webfont.eot?#iefix') format('eot'), url('#{$fonts-dir}/gibson/Regular-webfont.svg') format('svg'), url('#{$fonts-dir}/gibson/Regular-webfont.woff') format('woff'), url('#{$fonts-dir}/gibson/Regular-webfont.otf') format('truetype');
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Gibson-Regular";
+    src: url('#{$fonts-dir}/gibson/Regular-webfont.svg') format('svg');
+  }
+}
+@font-face {
+  font-family: "Gibson-Light";
+  src: url('#{$fonts-dir}/gibson/Light-webfont.eot');
+  src: url('#{$fonts-dir}/gibson/Light-webfont.eot?#iefix') format('eot'), url('#{$fonts-dir}/gibson/Light-webfont.svg') format('svg'), url('#{$fonts-dir}/gibson/Light-webfont.woff') format('woff'), url('#{$fonts-dir}/gibson/Light-webfont.otf') format('truetype');
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Gibson-Light";
+    src: url('#{$fonts-dir}/gibson/Light-webfont.svg') format('svg');
+  }
+}
+
+
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 2952406, 2015-01-13T16:21:21-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: ProximaNovaA-ExtrabldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-extrabld-it/
+ * 
+ * Webfont: ProximaNovaS-ExtrabldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-extrabld-it/
+ * 
+ * Webfont: ProximaNovaA-Thin by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-thin/
+ * 
+ * Webfont: ProximaNovaS-Thin by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-thin/
+ * 
+ * Webfont: ProximaNovaS-Extrabld by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-extrabld/
+ * 
+ * Webfont: ProximaNovaA-Extrabld by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-extrabld/
+ * 
+ * Webfont: ProximaNovaS-SemiboldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold-it/
+ * 
+ * Webfont: ProximaNovaA-Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold/
+ * 
+ * Webfont: ProximaNovaS-ThinIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-thin-it/
+ * 
+ * Webfont: ProximaNovaA-RegularIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular-it/
+ * 
+ * Webfont: ProximaNovaS-Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular/
+ * 
+ * Webfont: ProximaNovaA-LightIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light-it/
+ * 
+ * Webfont: ProximaNovaS-Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold/
+ * 
+ * Webfont: ProximaNovaS-RegularIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular-it/
+ * 
+ * Webfont: ProximaNovaS-Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold/
+ * 
+ * Webfont: ProximaNovaA-BoldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold-it/
+ * 
+ * Webfont: ProximaNovaA-Light by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light/
+ * 
+ * Webfont: ProximaNovaA-SemiboldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold-it/
+ * 
+ * Webfont: ProximaNovaS-BlackIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-black-it/
+ * 
+ * Webfont: ProximaNovaA-Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold/
+ * 
+ * Webfont: ProximaNovaS-BoldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold-it/
+ * 
+ * Webfont: ProximaNovaS-Black by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-black/
+ * 
+ * Webfont: ProximaNovaA-Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular/
+ * 
+ * Webfont: ProximaNovaS-LightIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light-it/
+ * 
+ * Webfont: ProximaNovaA-Black by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-black/
+ * 
+ * Webfont: ProximaNovaS-Light by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light/
+ * 
+ * Webfont: ProximaNovaA-ThinIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-thin-it/
+ * 
+ * Webfont: ProximaNovaA-BlackIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-black-it/
+ * 
+ * Webfont: ProximaNova-ExtrabldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/extrabld-it/
+ * 
+ * Webfont: ProximaNovaT-Thin by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/thin/
+ * 
+ * Webfont: ProximaNova-Extrabld by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/extrabld/
+ * 
+ * Webfont: ProximaNova-Black by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/black/
+ * 
+ * Webfont: ProximaNova-LightIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light-it/
+ * 
+ * Webfont: ProximaNova-Light by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+ * 
+ * Webfont: ProximaNova-RegularIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular-it/
+ * 
+ * Webfont: ProximaNova-SemiboldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold-it/
+ * 
+ * Webfont: ProximaNova-ThinIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/thin-it/
+ * 
+ * Webfont: ProximaNova-Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+ * 
+ * Webfont: ProximaNova-BlackIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/black-it/
+ * 
+ * Webfont: ProximaNova-BoldIt by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold-it/
+ * 
+ * Webfont: ProximaNova-Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+ * 
+ * Webfont: ProximaNova-Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2952406
+ * Licensed pageviews: 1,000,000
+ * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+// .ProximaNovaA-ExtrabldIt{
+//   font-family: "ProximaNovaS-ExtrabldIt", arial;
+// }
+// .ProximaNova-Light{
+//   font-family: "ProximaNova-Light", arial;
+// }
+// .ProximaNova-Semibold{
+//   font-family: "ProximaNova-Semibold", arial;
+// }
+// .ProximaNova-Regular{
+//   font-family: "ProximaNova-Regular", arial;
+// }
+// .ProximaNova-Bold{
+//   font-family: "ProximaNova-Bold", arial;
+// }
+// .ProximaNovaA-Regular{
+//   font-family: "ProximaNovaA-Regular", arial;
+// }
+// .ProximaNovaA-Bold{
+//   font-family: "ProximaNovaA-Bold", arial;
+// }
+
+
+  
+@font-face {font-family: 'ProximaNovaA-ExtrabldIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_0_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_0_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_0_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_0_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-ExtrabldIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_1_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_1_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_1_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_1_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Thin';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_2_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_2_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_2_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_2_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Thin';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_3_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_3_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_3_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_3_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Extrabld';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_4_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_4_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_4_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_4_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Extrabld';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_5_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_5_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_5_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_5_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_5_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-SemiboldIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_6_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_6_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_6_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_6_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_6_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Bold';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_7_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_7_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_7_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_7_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_7_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-ThinIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_8_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_8_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_8_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_8_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_8_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-RegularIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_9_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_9_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_9_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_9_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_9_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Regular';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_A_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_A_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_A_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_A_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_A_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-LightIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_B_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_B_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_B_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_B_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_B_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Semibold';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_C_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_C_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_C_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_C_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_C_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-RegularIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_D_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_D_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_D_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_D_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_D_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Bold';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_E_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_E_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_E_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_E_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_E_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-BoldIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_F_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_F_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_F_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_F_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_F_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Light';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_10_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_10_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_10_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_10_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_10_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-SemiboldIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_11_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_11_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_11_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_11_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_11_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-BlackIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_12_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_12_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_12_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_12_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_12_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Semibold';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_13_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_13_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_13_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_13_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_13_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-BoldIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_14_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_14_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_14_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_14_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_14_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Black';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_15_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_15_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_15_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_15_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_15_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Regular';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_16_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_16_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_16_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_16_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_16_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-LightIt';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_17_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_17_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_17_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_17_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_17_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaA-Black';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_18_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_18_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_18_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_18_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_18_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNovaS-Light';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_19_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_19_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_19_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_19_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_19_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNova-Extrabld';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_1E_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_1E_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_1E_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_1E_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_1E_0.ttf') format('truetype');}
+
+  
+@font-face {font-family: 'ProximaNova-Light';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_21_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_21_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_21_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_21_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_21_0.ttf') format('truetype');}
+
+  
+@font-face {font-family: 'ProximaNova-Semibold';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_25_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_25_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_25_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_25_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_25_0.ttf') format('truetype');}
+
+  
+@font-face {font-family: 'ProximaNova-Regular';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_28_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_28_0.eot?#iefix') format('embedded-opentype'),
+                url('#{$fonts-dir}/proxima/2D0CD6_28_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_28_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_28_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ProximaNova-Bold';
+                src: url('#{$fonts-dir}/proxima/2D0CD6_29_0.eot');
+                src: url('#{$fonts-dir}/proxima/2D0CD6_29_0.eot?#iefix') format('embedded-opentype'), 
+                url('#{$fonts-dir}/proxima/2D0CD6_29_0.woff2') format('woff2'),
+                url('#{$fonts-dir}/proxima/2D0CD6_29_0.woff') format('woff'),
+                url('#{$fonts-dir}/proxima/2D0CD6_29_0.ttf') format('truetype');}

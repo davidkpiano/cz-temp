@@ -1,0 +1,22 @@
+
+$pagination-content-padding: 0 $pad-x !default;
+
+
+
+%pagination {
+    @extend %text-middle;
+
+    %content {
+        padding: $pagination-content-padding;
+    }
+
+    > * {
+        display: inline-block;
+    }
+}
+
+
+
+.vp-pagination {
+    @extend %pagination;
+}

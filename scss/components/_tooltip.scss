@@ -1,0 +1,74 @@
+
+$tooltip-theme: 'viewpost' !default;
+$tooltip-type-scale: -1 !default;
+$tooltip-padding: $pad-half !default;
+$tooltip-z-index: z-index(2) !default;
+$tooltip-text-align: left !default;
+$tooltip-border-width: $form-border-width !default;
+$tooltip-border-radius: $form-border-radius !default;
+$tooltip-min-width: 10rem !default;
+$tooltip-max-width: 40rem !default;
+$tooltip-offset: 0.5rem !default;
+$tooltip-color: $color-black !default;
+
+%tooltip {
+    @extend %animation;
+    @extend %overlay;
+    @include type-scale($tooltip-type-scale);
+
+    min-width: $tooltip-min-width;
+    max-width: $tooltip-max-width;
+
+    @include animation('shiftDownUp', 'inactive');
+    
+    :hover > & {
+        @include animation('shiftDownUp');
+    }
+
+    padding: $tooltip-padding;
+    z-index: $tooltip-z-index;
+    text-align: $tooltip-text-align;
+    border-width: $tooltip-border-width;
+    border-style: solid;
+    border-radius: $tooltip-border-radius;
+    pointer-events: none;
+
+    &-below-left {
+        @include position-absolute(left, below);
+        margin-top: $tooltip-offset;
+    }
+
+    &-below-right {
+        @include position-absolute(right, below);
+        margin-top: $tooltip-offset;
+    }
+
+    &-above-left {
+        @include position-absolute(left, above);
+        margin-bottom: $tooltip-offset;
+    }
+
+    &-above-right {
+        @include position-absolute(right, above);
+        margin-bottom: $tooltip-offset;
+    }
+}
+
+
+
+%theme-tooltip-viewpost {
+    @extend %shadow;
+    color: $tooltip-color;
+    border-color: $color-border;
+    background-color: $color-white;
+}
+
+.vp-tooltip {
+    @extend %tooltip;
+    @include theme(tooltip, $tooltip-theme);
+
+    &.below-left { @extend %tooltip-below-left; }
+    &.below-right { @extend %tooltip-below-right; }
+    &.above-left { @extend %tooltip-above-left; }
+    &.above-right { @extend %tooltip-above-right; }
+}

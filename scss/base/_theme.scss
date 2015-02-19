@@ -1,0 +1,11 @@
+
+
+@mixin theme(
+    $component,
+    $theme,
+    $variation: false
+) {
+    $variation: if($variation, unquote('-#{$variation}'), '');
+
+    @extend %theme-#{$component}-#{$theme}#{$variation};
+}

@@ -1,0 +1,15 @@
+
+
+%exit {
+    @include position-absolute(right, top);
+    @extend %text-midcenter;
+    display: block;
+    height: 2rem;
+    width: 2rem;
+
+    @include string('exit', 'after');
+}
+
+.vp-exit {
+    @extend %exit;
+}

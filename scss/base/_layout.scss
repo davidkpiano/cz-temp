@@ -1,0 +1,65 @@
+
+$z-index-interval: 10 !default;
+$container-width: 960px !default;
+
+%global {    
+    box-sizing: border-box;
+    position: relative;
+}
+
+%container {
+    width: 100%;
+    max-width: $container-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    &-pad {
+        width: 100%;
+        min-width: 100%;
+        padding-left: calc((100% - #{$container-width}) / 2);
+        padding-right: calc((100% - #{$container-width}) / 2);
+    }
+}
+
+%content {
+    display: block;
+}
+
+%header, %section, %footer {
+    @include clearfix;
+    display: block;
+    width: 100%;
+}
+
+%title {
+    display: inline-block;
+}
+
+
+.viewstrap {
+    &, *, *:before, *:after { @extend %global; }
+
+    .container { @extend %container; }
+
+    .container-pad { @extend %container-pad; }
+}
+
+.vp-content {
+    @extend %content;
+}
+
+.vp-header {
+    @extend %header;
+}
+
+.vp-section {
+    @extend %section;
+}
+
+.vp-footer {
+    @extend %footer;
+}
+
+.vp-title {
+    @extend %title;
+}

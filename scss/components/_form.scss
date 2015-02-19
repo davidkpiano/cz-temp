@@ -1,0 +1,35 @@
+@import '_string';
+
+$form-radius: 2px !default;
+$form-input-scale: -1 !default;
+$form-border-width: 1px !default;
+$form-border-radius: 2px !default;
+
+%form {
+    width: 100%;
+}
+
+%label {
+    @extend %type-strong;
+    display: block;
+
+    > *, &:before, &:after {
+        @extend %type-normal;
+    }
+
+    &-optional {
+        @include string('optional', 'right');
+    }
+}
+
+
+
+.vp-label {
+    @extend %label;
+
+    &.optional { @extend %label-optional; }
+}
+
+.vp-form {
+    @extend %form;
+}

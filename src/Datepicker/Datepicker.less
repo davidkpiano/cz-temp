@@ -1,0 +1,200 @@
+/* 
+Datepicker
+
+####Get a date rangepicker for an element
+- callbackOnApply: React.PropTypes.func.isRequired - function that will be called when an apply or canned date button in clicked.  will pass back an object with the startDate and endDate as properties
+- cannedRangeOptions: React.PropTypes.array.isRequired - defined by providing an array of options of the format {label: 'somthing', daysInPast: aNumber}.
+- selectedStartDate: React.PropTypes.string.isRequired - initial starting start date
+- selectedEndDate: React.PropTypes.string.isRequired - initial starting end date
+- maxDisplayedDate: React.PropTypes.string.isRequired - the latest allowed end date
+- maxDayRange: React.PropTypes.number - the maximum number of days allowed to be chosen (so, end date minus this number)
+- placement: React.PropTypes.string - top | bottom | left | right; defaults to bottom
+- positionLeft: React.PropTypes.number - orients the datepicker box by pushing it x pixels more left
+- positionTop: React.PropTypes.number - orients the datepicker box by pushing it x pixels more top
+- arrowOffsetLeft: React.PropTypes.number - orients the datepicker arrow by pushing it x pixels more left
+- arrowOffsetTop: React.PropTypes.number - orients the datepicker arrow by pushing it x pixels more top
+- showCustomRange: React.PropTypes.bool - boolean for whether or not to show the custom button; defaults to true
+
+Markup:
+<div id="dateRangePickerTrigger" class="payments-filter payments-filter-date-range">
+<script type="text/jsx">
+    React.render(DatepickerTrigger(
+        {
+            callbackOnApply: function(dateRangeObj) { 
+              console.log('dateRangeObj: ' + dateRangeObj.selectedDate)
+            },
+            selectedDate: (new Date()).toLocaleDateString(),
+            maxDisplayedDate: (new Date('1/1/2021')).toLocaleDateString(),
+            minDisplayedDate: (new Date('1/1/2001')).toLocaleDateString()
+        }), 
+    document.getElementById('dateRangePickerTrigger'));
+</script>
+
+Styleguide 8.0
+*/
+
+@import (reference) "../variables";
+
+.someBemName {
+  /* max-width: 640px;   */
+  margin-top: 10px;
+  width: 675px;
+}
+
+.someBemName .button {
+    margin-bottom: 10px;
+}
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    display: none;
+    max-width: 650px;
+    padding: 1px;
+    text-align: left;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    white-space: normal;
+}
+
+.popover.bottom > .arrow {
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: #999999;
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+    top: -11px;
+}
+
+.popover > .arrow {
+    border-width: 11px;
+}
+
+.popover > .arrow, .popover > .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.popover.bottom > .arrow:after {
+    content: " ";
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: white;
+}
+.popover > .arrow:after {
+    border-width: 10px;
+    content: "";
+}
+.popover > .arrow, .popover > .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.popover-content {
+    padding: 9px 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333333;
+    background-color: white;
+}
+
+.popover .vp-button-group button{
+    margin: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.payments-filter-date-range {
+    height: 33px;
+}
+
+.payments-filter {
+    float: left;
+}
+
+#dateRange {
+    margin-left: 10px !important;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+#wrapperHack {
+    float: left;
+    background-color: #fafafa;
+    height: 33px;
+    width: 46px;
+    border-right: 0;
+    padding: 7px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555555;
+    text-align: center;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    white-space: nowrap;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+#calendarIconHack {
+    width: 0;
+    height: 0;
+    display: inline;
+    color: #c1c1c1;
+}
+
+.flaticon.stroke.calendar-3:before, .flaticon.stroke.H3:before {
+    content: "\e476";
+}
+
+.flaticon.stroke:before {
+    font-family: 'Flaticons Stroke';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+#dateRangeInner {
+    width: 165px;
+    border-radius: 0;
+    border-color: #dddddd;
+    z-index: 0;
+    display: table-cell;
+    position: relative;
+    float: left;
+    margin-bottom: 0;
+    height: 33px;
+    padding: 7px 12px;
+    font-size: 12px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: white;
+    background-image: none;
+    border: 1px solid #cccccc;
+    box-shadow: none;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}

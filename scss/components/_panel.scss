@@ -1,0 +1,63 @@
+
+$panel-theme: 'viewpost' !default;
+$panel-padding: 1rem !default;
+$panel-header-padding: $panel-padding !default;
+$panel-content-padding: $panel-padding !default;
+$panel-footer-padding: $panel-padding !default;
+$panel-border-width: $form-border-width !default;
+$panel-margin: 0 0 1rem 0 !default;
+$panel-border-radius: $form-border-radius !default;
+
+
+
+%panel {
+    @include clearfix();
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: $panel-margin;
+    border-width: $panel-border-width;
+    border-radius: $panel-border-radius;
+
+    &, > * {
+        border-style: solid;
+    }
+
+    > %header, > %content, > %footer {
+        @include clearfix();
+    }
+
+    > %header {
+        padding: $panel-header-padding;
+        border-width: 0 0 $panel-border-width 0;
+    }
+
+    > %content {
+        padding: $panel-content-padding;
+        border-width: 0;
+    }
+
+    > %footer {
+        padding: $panel-footer-padding;
+        border-width: $panel-border-width 0 0 0;
+    }
+}
+
+
+
+%theme-panel-viewpost {
+    &, > %header, > %footer {
+        border-color: $color-border;
+    }
+
+    > %content {
+        background-color: $color-light;
+    }
+}
+
+
+
+.vp-panel {
+    @extend %panel;
+    @include theme('panel', $panel-theme);
+}

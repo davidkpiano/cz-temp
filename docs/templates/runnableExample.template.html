@@ -1,0 +1,20 @@
+
+{# Be aware that we need these extra new lines here or marked will not realise that the <div>
+   is HTML and wrap each line in a <p> - thus breaking the HTML #}
+
+<div class="runnable-example-container">
+  <div class="runnable-example">
+      <h2>Usage - {{doc.example.name}}</h2>
+  {% for fileName, file in doc.example.files %}
+    <div class="runnable-example-file" {% for attrName, attrValue in file.attributes %}
+        {{attrName }}="{{attrValue}}"{% endfor %}>
+            <pre>{{file.fileContents}} </pre>
+    </div>
+  {% endfor %}
+<h2>Example</h2>
+  <iframe class="runnable-example-frame" src="/{{doc.example.deployments.default.outputPath}}" name="{{ doc.example.id }}"></iframe>
+  </div>
+</div>
+
+{# Be aware that we need these extra new lines here or marked will not realise that the <div>
+   above is HTML and wrap each line in a <p> - thus breaking the HTML #}

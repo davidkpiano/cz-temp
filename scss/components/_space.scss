@@ -1,0 +1,87 @@
+
+$pad-x: 1rem !default;
+$pad-x-half: $pad-x / 2 !default;
+$pad-x-double: $pad-x * 2 !default;
+
+$pad-y: $pad-x !default;
+$pad-y-half: $pad-y / 2 !default;
+$pad-y-double: $pad-y * 2 !default;
+
+$pad: $pad-y $pad-x !default;
+$pad-half: $pad-y-half $pad-x-half !default;
+$pad-double: $pad-y-double $pad-x-double !default;
+
+$margin-x: $pad-x !default;
+$margin-x-half: $margin-x / 2 !default;
+$margin-x-double: $margin-x * 2 !default;
+
+$margin-y: $margin-x !default;
+$margin-y-half: $margin-y / 2 !default;
+$margin-y-double: $margin-y * 2 !default;
+
+
+
+%pad {
+    padding: $pad;
+
+    &-half {
+        padding: $pad-half;
+    }
+
+    &-double {
+        padding: $pad-double;
+    }
+
+    &-x {
+        padding-left: $pad-x;
+        padding-right: $pad-x;
+
+        &-half { 
+            padding-left: $pad-x-half;
+            padding-right: $pad-x-half;
+        }
+        &-double { 
+            padding-left: $pad-x-double;
+            padding-right: $pad-x-double;
+        }
+    }
+
+    &-y {
+        padding-top: $pad-y;
+        padding-bottom: $pad-y;
+
+        &-half {
+            padding-top: $pad-y-half;
+            padding-bottom: $pad-y-half;
+        }
+        &-double {
+            padding-top: $pad-y-double;
+            padding-bottom: $pad-y-double;
+        }
+    }
+}
+
+
+.viewstrap {
+    .pad {
+        @extend %pad;
+
+        &-half { @extend %pad-half; }
+
+        &-double { @extend %pad-double; }
+
+        &-x {
+            @extend %pad-x;
+
+            &-half { @extend %pad-x-half; }
+            &-double { @extend %pad-x-double; }
+        }
+
+        &-y {
+            @extend %pad-y;
+
+            &-half { @extend %pad-y-half; }
+            &-double { @extend %pad-y-double; }
+        }
+    }
+}

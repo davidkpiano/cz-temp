@@ -1,0 +1,20 @@
+
+$pad-x: 1rem !default;
+$pad-x-half: $pad-x / 2 !default;
+$pad-x-double: $pad-x * 2 !default;
+
+$pad-y: $pad-x !default;
+$pad-y-half: $pad-y / 2 !default;
+$pad-y-double: $pad-y * 2 !default;
+
+$pad: $pad-y $pad-x !default;
+$pad-half: $pad-y-half $pad-x-half !default;
+$pad-double: $pad-y-double $pad-x-double !default;
+
+$margin-x: $pad-x !default;
+$margin-x-half: $margin-x / 2 !default;
+$margin-x-double: $margin-x * 2 !default;
+
+$margin-y: $margin-x !default;
+$margin-y-half: $margin-y / 2 !default;
+$margin-y-double: $margin-y * 2 !default;

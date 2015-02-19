@@ -1,0 +1,20 @@
+@import (reference) "../variables";
+
+.vp-searchTypeahead-category {
+    color: @graytone06;
+    background-color: @graytone00;
+    .gibson-font-size('semibold');
+    padding: 5px 12px;
+}
+
+.vp-searchTypeahead-highlight {
+    color: @black;
+    .gibson-font-size('semibold');
+    border-bottom: 1px solid @graytone03;
+}
+
+.vp-typeahead-selected {
+    .vp-searchTypeahead-highlight {
+        color: @white;
+    }
+}

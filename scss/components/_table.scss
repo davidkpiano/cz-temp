@@ -1,0 +1,99 @@
+
+$table-theme: 'viewpost' !default;
+$table-margin-bottom: 1rem !default;
+$table-border-width: $input-border-width !default;
+$table-border-color: $color-gray !default;
+$table-text-align: left !default;
+
+$table-cell-padding: 1rem !default;
+$table-cell-border-width: $table-border-width !default;
+$table-cell-type-scale: -1 !default;
+
+$table-thead-padding: $table-cell-padding !default;
+$table-thead-border-width: 2 * $table-border-width !default;
+$table-thead-type-scale: -1 !default;
+$table-thead-text-transform: none !default;
+$table-thead-font-weight: normal !default;
+
+$table-tfoot-padding: $table-cell-padding !default;
+$table-tfoot-type-scale: 0 !default;
+$table-tfoot-text-transform: uppercase !default;
+
+
+
+%table {
+    margin-bottom: $table-margin-bottom;
+    text-align: $table-text-align;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    thead {
+        th, td {
+            @include type-scale($table-thead-type-scale);
+            text-transform: $table-thead-text-transform;
+            padding: $table-thead-padding;
+            font-weight: $table-thead-font-weight;
+        }
+    }
+
+    tfoot {
+        td {
+            padding: $table-tfoot-padding;
+        }
+    }
+
+    &, tbody {
+        td {
+            @include type-scale($table-cell-type-scale);
+            padding: $table-cell-padding;
+        }
+    }
+
+    th {
+        border-width: $table-thead-border-width;
+    }
+
+    td {
+        border-width: $table-cell-border-width;
+    }
+}
+
+
+
+@mixin theme-table-viewpost(
+    $border-color: $color-border,
+
+    $th-color: $color-gray,
+    $td-color: inherit,
+
+    $th-border-style: solid,
+    $td-border-style: dotted
+) {
+    td, th {
+        border-color: $border-color;
+        border-left-width: 0;
+        border-top-width: 0;
+        border-right-width: 0;
+    }
+
+    th {
+        border-style: $th-border-style;
+        color: $th-color;
+    }
+
+    td {
+        border-style: $td-border-style;
+        color: $td-color;
+    }
+}
+
+%theme-table-viewpost {
+    @include theme-table-viewpost;
+}
+
+
+.vp-table {
+    @extend %table;
+    @include theme(table, $table-theme);
+}

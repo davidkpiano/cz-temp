@@ -1,0 +1,54 @@
+
+$visibility-mqs: (all, small, medium, large, short, tall);
+
+
+@mixin visibility($visibility, $mq-sizes...) {
+    @if length($mq-sizes) == 0 {
+        $mq-sizes: all;
+    }
+
+    @each $size in $mq-sizes {
+        @include mq($size) {        
+            @if $visibility == show {
+                display: inherit !important;
+            } @else if $visibility == hide {
+                display: none !important;
+            } @else if $visibility == visible {
+                visibility: visible !important;
+            } @else if ($visibility == invisible or $visibility == hidden) {
+                visibility: hidden !important;
+            } @else if $visibility == collapse {
+                visibility: collapse !important;
+            }
+        }
+    }
+}
+
+@each $mq in $visibility-mqs {
+    %hide-#{$mq} { @include visibility(hide, $mq); }
+
+    %show-#{$mq} { @include visibility(show, $mq); }
+} 
+
+%print-only {
+    @include visibility(hide, screen);
+    @include visibility(show, print);
+}
+
+%print-hide { @include visibility(hide, print); }
+
+
+.viewstrap {
+    @each $mq in $visibility-mqs {
+        $suffix: -#{$mq};
+        @if $mq == 'all' { $suffix: ''; }
+
+        .hide#{$suffix}, .hidden#{$suffix} { @extend %hide-#{$mq}; }
+
+        .show#{$suffix} { @extend %show-#{$mq}; }
+    }
+
+    .print-only { @extend %print-only; }
+
+    .print-hide { @extend %print-hide; }
+}

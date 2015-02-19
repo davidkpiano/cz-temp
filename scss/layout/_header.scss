@@ -1,0 +1,24 @@
+
+
+%template-header {
+    display: block;
+    height: $template-header-height;
+
+    > * {
+        @include position-absolute($vertical: middle, $position: relative);
+    }
+}
+
+%theme-template-header-viewpost {
+    background: $color-primary;
+
+}
+
+.vp-template-header {
+    @extend %template-header;
+    @include theme('template-header', 'viewpost');
+
+    %item {
+        @include theme('item', 'viewpost', 'light');
+    }
+}

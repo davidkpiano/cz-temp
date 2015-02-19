@@ -1,0 +1,11 @@
+
+
+%template-aside {
+    float: left;
+    height: $template-aside-height;
+    width: $template-aside-width;
+}
+
+.vp-template-aside {
+    @extend %template-aside;
+}

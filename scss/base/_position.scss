@@ -1,0 +1,143 @@
+@mixin clearfix() {
+    &:before, &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@function z-index($index) {
+    @return $index * $z-index-interval;
+}
+
+@mixin position-absolute(
+    $horizontal: false,
+    $vertical: false,
+    $top: false,
+    $bottom: false,
+    $left: false,
+    $right: false,
+    $position: absolute
+) {
+    position: $position;
+
+    $transform-list: null;
+
+    @if $horizontal {
+        @if $horizontal == left or $horizontal == afterLeft { 
+            left: 0;
+            right: initial;
+        }
+        @else if $horizontal == centerLeft {
+            left: 0;
+            right: initial;
+            $transform-list: append($transform-list, translateX(-50%));
+        }
+        @else if $horizontal == right or $horizontal == beforeRight {
+            right: 0;
+            left: initial;
+        }
+        @else if $horizontal == centerRight {
+            right: 0;
+            left: initial;
+            $transform-list: append($transform-list, translateX(50%));
+        }
+        @else if $horizontal == before or $horizontal == beforeLeft {
+            right: 100%;
+            left: initial;
+        }
+        @else if $horizontal == after or $horizontal == afterRight {
+            left: 100%;
+            right: initial;
+        }
+        @else if $horizontal == center {
+            left: 50%;
+            right: initial;
+            $transform-list: append($transform-list, translateX(-50%));
+        }
+        @else if $horizontal == beforeCenter {
+            right: 50%;
+            left: initial;
+        }
+        @else if $horizontal == afterCenter {
+            left: 50%;
+            right: initial;
+        }
+        @else {
+            left: $horizontal;
+        }
+    }
+
+    @if $vertical {  
+        @if $vertical == top or $vertical == belowTop {
+            top: 0;
+            bottom: initial;
+        }
+        @else if $vertical == midTop {
+            top: 0;
+            bottom: initial;
+            $transform-list: append($transform-list, translateY(-50%));
+        }
+        @else if $vertical == bottom or $vertical == aboveBottom {
+            bottom: 0;
+            top: initial;
+        }
+        @else if $vertical == midBottom {
+            bottom: 0;
+            top: initial;
+            $transform-list: append($transform-list, translateY(50%));
+        }
+        @else if $vertical == below or $vertical == belowBottom {
+            top: 100%;
+            bottom: initial;
+        }
+        @else if $vertical == above or $vertical == aboveTop {
+            bottom: 100%;
+            top: initial;
+        }
+        @else if $vertical == center or $vertical == middle {
+            top: 50%;
+            $transform-list: append($transform-list, translateY(-50%));
+            bottom: initial;
+        }
+        @else if $vertical == aboveCenter or $vertical == aboveMiddle {
+            bottom: 50%;
+            top: initial;
+        }
+        @else if $vertical == belowCenter or $vertical == belowMiddle {
+            top: 50%;
+            bottom: initial;
+        }
+        @else {
+            top: $vertical;
+            bottom: initial;
+        }
+    }
+
+    @if $top {
+        top: $top;
+        bottom: initial;
+    }
+
+    @if $bottom {
+        bottom: $bottom;
+        top: initial;
+    }
+
+    @if $left {
+        left: $left;
+        right: initial;
+    }
+
+    @if $right {
+        right: $right;
+        left: initial;
+    }
+
+    @if $transform-list {
+        transform: $transform-list;
+    }
+}

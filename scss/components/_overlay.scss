@@ -1,0 +1,60 @@
+
+$overlay-z-index: z-index(2);
+
+
+
+%overlay {
+    display: block;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: $overlay-z-index;
+
+    &-below-left {
+        @include position-absolute(left, below);
+    }
+
+    &-below-right {
+        @include position-absolute(right, below);
+    }
+
+    &-above-left {
+        @include position-absolute(left, above);
+    }
+
+    &-above-right {
+        @include position-absolute(right, above);
+    }
+
+    &-top-left {
+        @include position-absolute(left, top);
+    }
+
+    &-top-right {
+        @include position-absolute(right, top);
+    }
+
+    &-bottom-left {
+        @include position-absolute(left, bottom);
+    }
+
+    &-bottom-right {
+        @include position-absolute(right, bottom);
+    }
+
+    &-bottom-push-right {
+        @include position-absolute($left: 100%, $vertical: bottom);
+    }
+
+    &-bottom-push-left {
+        @include position-absolute($right: 100%, $vertical: bottom);
+    }
+
+    &-top-push-right {
+        @include position-absolute($left: 100%, $vertical: top);
+    }
+
+    &-top-push-left {
+        @include position-absolute($right: 100%, $vertical: top);
+    }
+}
+

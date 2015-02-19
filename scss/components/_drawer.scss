@@ -1,0 +1,39 @@
+$drawer-width: 30% !default;
+
+
+
+%drawer {
+    width: $drawer-width;
+    height: 100%;
+    background: $color-light;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+
+    &, + * {
+        @extend %transition;
+    }
+
+    &-right {
+        transform: translateX(100%);
+        left: initial;
+        right: 0;
+    }
+    
+    // States
+    @include state('active') {
+        transform: translateX(0);
+    }
+}
+
+
+
+.vp-drawer {
+    @extend %drawer;
+
+    &.right {
+        @extend %drawer-right;
+    }
+}

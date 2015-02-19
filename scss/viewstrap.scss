@@ -1,0 +1,30 @@
+
+@charset "UTF-8";
+
+/* Import Modules */
+@import 'utilities/_module';
+@import 'base/_module';
+@import 'components/_module';
+@import 'layout/_module';
+
+// Styleguide-specific styles
+.sg-header {
+    height: 300px;
+}
+
+.sg-example {
+    @extend %pad;
+    @extend %border;
+    @include clearfix;
+    margin-bottom: $margin-y;
+
+    &:before {
+        @extend %type-strong;
+        @include type-scale(-1);
+        display: block;
+        content: 'Example';
+        color: $color-gray;
+        text-transform: uppercase;
+        margin-bottom: $margin-y;
+    }
+}
